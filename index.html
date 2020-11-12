@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>eelテスト</title>
+        <link rel="stylesheet" href="./style.css">
+        <link rel="icon" href="data:,">
+    </head>
+    <body>
+        <h2>eelテスト</h2>
+        <tr>
+            <td> 検索ワード：</td>
+            <td><input type="text" id=textData name="searchWord" size="30" maxlength="20"></td>
+            <td><button id="search" type="button" name="searchBtn" value="searchBtnValue">検索</button></td>
+        </tr>
+
+        <script type="text/javascript" src="./eel.js"></script>
+        <script>
+            const search = document.getElementById("search");
+            search.addEventListener('click', () => {
+                console.log("検索ワードを入力してください！");
+            });
+
+            eel.expose(view_log_js)
+            function view_log_js(text){
+                
+            }
+        </script>
+    </body>
+</html>
