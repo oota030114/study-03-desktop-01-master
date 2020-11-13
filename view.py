@@ -10,10 +10,9 @@ size=(700,600)
 def kimetsu_search(word):
     search.kimetsu_search(word)
 
-# @ eel.expose
-# def alertMsg():
-#     print("検索キーワードを入力してください。")
-
+@ eel.expose
+def view_log_js(word):
+    eel.viewlogjs(word)
 
 #HTML表示    
 desktop.start(app_name,end_point,size)
