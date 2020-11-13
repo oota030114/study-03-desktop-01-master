@@ -16,18 +16,14 @@
         <script>
             const search = document.getElementById("search");
             search.addEventListener('click', () => {
-                if(document.getElementById("textData")==null){
+                if(textData.value==""){
                     alert("検索ワードを入力してください！");
                 }else{
-                    eel.kimetsu_search(document.getElementById("textData").text);
+                    eel.kimetsu_search(textData.value);
                 }
             });
-
-            eel.expose(search_js)
-            function search_js(){
-                kimetsu_search();
-            }
             
+            eel.expose(view_log_js)
             function view_log_js(text){
                 
             }
