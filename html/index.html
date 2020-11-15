@@ -30,15 +30,23 @@
             
             eel.expose(view_log_js)
             function view_log_js(sourcejson){
+                var arData = new Array();
                 var jsonData = JSON.stringify(sourcejson);
-                console.log(jsonData);
+                jsonData = jsonData.replace('\""','');
+                var arData = jsonData.split(',');
+                // words = str.split(',');
+                // console.log(jsonData);
                 // let jsData="";
                 // for(let i=0; i<10; i++){
                 //     jsData=JSON.stringify(sourcejson[i]);
                 //     console.log(jsData);
                 // }
                 
-                kekka.value=jsonData;
+                var str = ""
+                for(i=0; i < arData.length; i++){
+                    str = str + '\n' + arData[i];
+                }
+                kekka.value=str;
             }
         </script>
     </body>
