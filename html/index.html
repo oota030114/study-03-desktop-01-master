@@ -29,9 +29,16 @@
             });
             
             eel.expose(view_log_js)
-            function view_log_js(lstData){
-                // alert(text);
-                kekka.value=lstData.text;
+            function view_log_js(sourcejson){
+                var jsonData = JSON.stringify(sourcejson);
+                console.log(jsonData);
+                // let jsData="";
+                // for(let i=0; i<10; i++){
+                //     jsData=JSON.stringify(sourcejson[i]);
+                //     console.log(jsData);
+                // }
+                
+                kekka.value=jsonData;
             }
         </script>
     </body>
