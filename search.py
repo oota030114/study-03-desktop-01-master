@@ -21,3 +21,4 @@ def kimetsu_search(word):
     df=pd.DataFrame(source,columns=["name"])
     df.to_csv("./source.csv",encoding="utf_8-sig")
     print(source)
+    return source

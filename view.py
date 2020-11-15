@@ -8,7 +8,8 @@ size=(700,600)
 
 @ eel.expose
 def kimetsu_search(word):
-    search.kimetsu_search(word)
+    source = search.kimetsu_search(word)
+    eel.view_log_js(source)
 
 #HTML表示    
 desktop.start(app_name,end_point,size)
