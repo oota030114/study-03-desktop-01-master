@@ -13,7 +13,7 @@ def kimetsu_search(word):
     source = search.kimetsu_search(word)
     print("source->")
     print(source)
-    sourcejson=json.dumps(source)
+    sourcejson=json.dumps(source, ensure_ascii=False)
     print("sourcejson->")
     print(sourcejson)
     eel.view_log_js(sourcejson)
