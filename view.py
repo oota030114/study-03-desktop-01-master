@@ -14,10 +14,20 @@ def kimetsu_search(word):
     print("source->")
     print(source)
     sourcejson=json.dumps(source, ensure_ascii=False)
-    print("sourcejson->")
-    print(sourcejson)
-    eel.view_log_js(sourcejson)
+    # print("sourcejson->")
+    # print(sourcejson)
 
+    # source_list = list(enumerate(source))
+    # adr_dict = dict(source_list)
+
+    # print("source_list->")
+    # print(source_list)
+    # dic = {key: val for key, val in source_list}
+
+    # print("dic->")
+    # print(dic)
+    # sourcejson=json.dumps(dic, ensure_ascii=False)
+    eel.view_log_js(sourcejson)
 
 #HTML表示
 desktop.start(app_name,end_point,size)

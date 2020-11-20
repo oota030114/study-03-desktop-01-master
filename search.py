@@ -20,5 +20,5 @@ def kimetsu_search(word):
     # CSV書き込み
     df=pd.DataFrame(source,columns=["name"])
     df.to_csv("./source.csv",encoding="utf_8-sig")
-    print(source)
+    # print(source)
     return source
