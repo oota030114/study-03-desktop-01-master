@@ -31,12 +31,14 @@
             eel.expose(view_log_js)
             function view_log_js(sourcejson){
                 try {
-                    // var jsonData = JSON.stringify(sourcejson);
-
-                    str=""
-                    Object.keys(sourcejson).forEach(data => {
-                        // console.log(data);
-                        str = str + '\n' + sourcejson[data];
+                    str='';
+                    arrayJason = sourcejson.split(',');
+                    Object.keys(arrayJason).forEach(data => {
+                        if(str==''){
+                            str = arrayJason[data];
+                        }else{
+                            str = str + '\n' + arrayJason[data];
+                        }
                     })
                     kekka.value=str;
                 } catch (error) {
