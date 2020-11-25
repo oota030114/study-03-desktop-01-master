@@ -11,10 +11,8 @@ size=(700,600)
 @ eel.expose
 def kimetsu_search(word):
     source = search.kimetsu_search(word)
-    
     str = ','.join(source)
-    
-    sourcejson=json.dumps(source, ensure_ascii=False)
+    sourcejson=json.dumps(str, ensure_ascii=False)
     eel.view_log_js(sourcejson)
 
 #HTML表示
