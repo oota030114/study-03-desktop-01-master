@@ -14,7 +14,11 @@
 
         <p>
             <label for="kekka">検索結果</label><br>
-            <textarea readonly id="kekka" name="kekka" cols="80" rows="20" maxlength="100"></textarea>
+
+            <div class="FlexTextarea">
+                <div class="FlexTextarea__dummy" aria-hidden="true"></div>
+                <textarea id="kekka" class="FlexTextarea__textarea"></textarea>
+            </div>
         </p>
 
         <script type="text/javascript" src="./eel.js"></script>
@@ -45,6 +49,18 @@
                     console.error(error);
                 }
             }
+
+            function flexTextarea(el) {
+                const dummy = el.querySelector('.FlexTextarea__dummy')
+                el.querySelector('.FlexTextarea__textarea').addEventListener('input', e => {
+                    /*target:呼び出し元のオブジェクト*/
+                    dummy.textContent = e.target.value + '\u200b'
+                })
+            }
+
+            /*ヒットしたセレクタを全て取得*/
+            document.querySelectorAll('.FlexTextarea').forEach(flexTextarea)
+
         </script>
     </body>
 </html>
