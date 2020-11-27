@@ -22,7 +22,7 @@
 
         <script type="text/javascript" src="./eel.js"></script>
         <script>
-            const search = document.getElementById("search");
+            // const search = documet.getElementById("search");
             /*検索ボタン押下*/
             search.addEventListener('click', () => {
                 if(textData.value==""){
@@ -53,16 +53,11 @@
             /*el: DOM要素（≒ページ）*/
             function flexTextarea(el) {
                 const dummy = el.querySelector('.FlexTextarea__dummy')
-                // const dummy = el.querySelector('.FlexTextarea__textarea')
                 /*テキストエリア入力*/
                 el.querySelector('.FlexTextarea__textarea').addEventListener('input', e => {
-                    // console.log(e);
-                    // console.log(e.target.value);
-                    // console.log(e.target.value + '\u200b');
                     dummy.textContent = e.target.value + '\u200b';
                 })
             }
-
             /*ヒットしたセレクタを全て取得*/
             document.querySelectorAll('.FlexTextarea').forEach(flexTextarea);
         </script>
