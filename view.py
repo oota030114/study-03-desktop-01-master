@@ -9,8 +9,13 @@ end_point="index.html"
 size=(700,600)
 
 @ eel.expose
-def kimetsu_search(word):
-    source = search.kimetsu_search(word)
+def kimetsu_search(word, saveFolder):
+    if saveFolder[-1]=='/':
+        saveFile=saveFolder + "source.csv"
+    else:
+        saveFile=saveFolder + "/source.csv"
+    
+    source = search.kimetsu_search(word, saveFile)
     str = ','.join(source)
     sourcejson=json.dumps(str, ensure_ascii=False)
     eel.view_log_js(sourcejson)
