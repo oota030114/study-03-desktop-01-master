@@ -13,6 +13,13 @@
         </tr>
 
         <p>
+            <tr>
+                <td> 保存場所：　</td>
+                <td><input type="text" id=textFolder name="saveFolder" size="30" maxlength="500"></td>
+            </tr>
+        </p>
+
+        <p>
             <label for="kekka">検索結果</label><br>
             <div class="FlexTextarea">
                 <div class="FlexTextarea__dummy" aria-hidden="true"></div>
@@ -22,16 +29,15 @@
 
         <script type="text/javascript" src="./eel.js"></script>
         <script>
-            // const search = documet.getElementById("search");
-            /*検索ボタン押下*/
+            /*検索ボタン押下（search←ID）*/
             search.addEventListener('click', () => {
-                if(textData.value==""){
-                    alert("検索ワードを入力してください！");
+                if(textData.value=="" || textFolder.value==""){
+                    alert("未入力項目があります！");
                 }else{
-                    eel.kimetsu_search(textData.value);
+                    eel.kimetsu_search(textData.value, textFolder.value);
                 }
             });
-            
+
             eel.expose(view_log_js)
             function view_log_js(sourcejson){
                 try {
